@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container .item{
+        background: blue;
+    }
+    .main-container >.item{
+        background: red;
+        padding: 10px;
+    }
+    .button{
+        background: green;
+        border:0;
+        padding: 10px;
+    }
+    .button.active{
+        background: gray;
+    }
+    .button.danger{
+        background: red;
+    }
+    .item1 + .item2{
+        background: yellow;
+    }
+    input[type="text"]{
+        background: pink;
+        border:1px solid black;
+        height: 10px;
+   }
+</style>
+<body>
+
+<!-- 1. Item เป็นลูกของ Container  -->
+    <div class="container">
+        Container
+        <div class="item">
+            Item
+        </div>
+    </div>
+
+<!-- 2. Item เป็นลูกของ Container แค่ชั้นเดียว -->
+<div class="main-container">
+    Container
+    <div class="item">
+        Item
+        <div class="item">
+            Item 1
+        </div>
+        <div class="item">
+            Item 2
+        </div>
+        <div class="item">
+            Item 3
+        </div>
+    </div>
+</div>
+
+<!-- 3. มี class ติดกัน -->
+    <button class="button">ปุ่ม</button>
+    <button class="button active">ปุ่ม</button>
+    <button class="button danger">ปุ่ม</button>
+
+<!-- 4. เพื่อนกัน (adjacent) [wombo combo] -->
+    <div class="item1">Item 1</div>
+    <div class="item2">Item 2</div>
+
+<!-- 5. Attribute Selector-->
+    <input type="text" name="username">
+    <input type="text" name="password">
+    <input type="text" name="email">
+</body>
+</html>
