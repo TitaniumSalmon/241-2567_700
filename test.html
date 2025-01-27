@@ -6,10 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <div>Hello World</div>
-    ชื่อ<input type="text" name="firstname" value="">
+    <div>
+        <h2>สิ่งที่สนใจ</h2>
+        <div id = "content">
+            
+        </div>
+    </div>
+    <input type="checkbox" name="interest" value="กีฬา"> กีฬา
+    <input type="checkbox" name="interest" value="ดนตรี"> ดนตรี
+    <input type="checkbox" name="interest" value="อาหาร"> อาหาร
+    <input type="checkbox" name="interest" value="เทคโนโลยี"> เทคโนโลยี
+    <button onclick="SubmitInterest()">แสดงสิ่งที่สนใจ</button>
     <script>
-        console.log("Hello World")
+        function SubmitInterest(){
+            let interestDOM = document.querySelectorAll('input[name="interest"]');
+            let contentDOM = "<ul>";
+            for (let i = 0; i < interestDOM.length; i++) {
+                if (interestDOM[i].checked) {
+                    contentDOM += "<li>" + interestDOM[i].value + "</li>";
+
+                }
+            }
+            contentDOM += "</ul>";
+            let content = document.getElementById('content');
+            content.innerHTML = contentDOM;
+        }
     </script>
 </body>
 </html>
