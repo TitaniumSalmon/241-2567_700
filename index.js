@@ -1,10 +1,10 @@
 function submitData(){
-    let firstNameDOM = document.querySelector("input[name='firstname']");
-    let lastNameDOM = document.querySelector("input[name='lastname']");
-    let ageDOM = document.querySelector("input[name='age']");
-    let genderDOM = document.querySelector("input[name='gender']:checked");
+    let firstNameDOMs = document.querySelector("input[name='firstname']");
+    let lastNameDOMs = document.querySelector("input[name='lastname']");
+    let ageDOMs = document.querySelector("input[name='age']");
+    let genderDOMs = document.querySelector("input[name='gender']:checked");
     let interestDOMs = document.querySelectorAll("input[name='interest']:checked");
-    let descriptionDOM = document.querySelector("input[name='description']");
+    let descriptionDOMs = document.querySelector("input[name='description']");
 
     let interest = '';
     for (let i = 0; i < interestDOMs.length; i++) {
@@ -15,12 +15,12 @@ function submitData(){
     }
 
     let userData = {
-        firstName: firstNameDOM.value,
-        lastName: lastNameDOM.value,
-        age: ageDOM.value,
-        genderDOM: genderDOM.value,
+        firstName: firstNameDOMs.value,
+        lastName: lastNameDOMs.value,
+        age: ageDOMs.value,
+        gender: genderDOMs,
         interest: interest,
-        description: descriptionDOM.value
+        description: descriptionDOMs
     }
     console.log("submitData", userData);
 }
