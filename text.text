@@ -13,4 +13,4 @@ docker stop <container_id> // stop container
 
 docker system prune // remove all stopped container
 
-npx nodemon node index.js
+npx nodemon node index.js // run and use in postman
