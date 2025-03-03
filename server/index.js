@@ -72,18 +72,20 @@ app.post('/users', async (req, res) => {
 });
 
 // GET /user/:id - Fetch user by ID
-app.get('/user/:id', async (req, res) => {
-    const id = req.params.id;
+app.get('/users/:id', async (req, res) => {
     try {
-        const [user] = await conn.query('SELECT * FROM users WHERE idx = ?', [id]);
-        if (user.length > 0) {
-            res.json(user[0]);
-        } else {
-            res.status(404).json({ error: 'User not found' });
+        let id = req.params.id;
+        const results = await conn.query('SELECT * FROM users WHERE idx = ?', id);
+        if (results[0].length == 0) {
+
+            throw {statusCode: 404, message: 'User not found'};
         }
+        res.json(results[0][0]);
     } catch (error) {
-        console.log('Error:', error.message);
-        res.status(500).json({ error: error.message });
+        console.error('Error:', error.message);
+        res.status(500).json({ 
+            message: "something went wrong",
+            errorMessage: error.message});
     }
 });
 
