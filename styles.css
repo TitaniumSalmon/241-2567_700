@@ -43,19 +43,19 @@ input.form, textarea{
 }
 
 .message {
-    margin-button: 10px;
+    margin-top: 10px;
     padding: 10px;
-    background-color: #lightgray;
-    display: none;
+    background-color: lightgray;
+    border: 1px solid;
 }
 
 .message.success {
-    background-color: #lightgreen;
+    background-color: lightgreen;
     display: block;
 }
 
 .message.danger {
-    background-color: #lightcoral;
+    background-color: lightcoral;
     display: block;
 }
 

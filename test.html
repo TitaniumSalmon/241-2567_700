@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,41 +33,4 @@
         }
     </script>
 </body>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        <h2>สิ่งที่สนใจ</h2>
-        <div id = "content">
-            
-        </div>
-    </div>
-    <input type="checkbox" name="interest" value="กีฬา"> กีฬา
-    <input type="checkbox" name="interest" value="ดนตรี"> ดนตรี
-    <input type="checkbox" name="interest" value="อาหาร"> อาหาร
-    <input type="checkbox" name="interest" value="เทคโนโลยี"> เทคโนโลยี
-    <button onclick="SubmitInterest()">แสดงสิ่งที่สนใจ</button>
-    <script>
-        function SubmitInterest(){
-            let interestDOM = document.querySelectorAll('input[name="interest"]');
-            let contentDOM = "<ul>";
-            for (let i = 0; i < interestDOM.length; i++) {
-                if (interestDOM[i].checked) {
-                    contentDOM += "<li>" + interestDOM[i].value + "</li>";
-
-                }
-            }
-            contentDOM += "</ul>";
-            let content = document.getElementById('content');
-            content.innerHTML = contentDOM;
-        }
-    </script>
-</body>
->>>>>>> 554c9ab185da5f48dd991cad9166eef5f5a4c1aa
 </html>
