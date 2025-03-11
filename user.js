@@ -11,13 +11,19 @@ const loadData = async() => {
     const userDOM = document.getElementById('users');
 
     //2. นำ user ทั้งหมด โหลดกลับเข้าไปใน html
-    let htmlData = '<div>';
+    let htmlData = '<div class="grid grid-cols-5 gap-4">';
     for (let i = 0; i < response.data.length; i++) {
         let user = response.data[i];
-        htmlData += `<div>
-        ${user.id} ${user.firstname} ${user.lastname}
-        <a href='index.html?id=${user.id}'><button>Edit</button>
-        <button class = 'delete' dara-id='${user.id}'>Delete</button>
+        htmlData += `
+        <div>
+            <div>
+                ${user.id} 
+                ${user.firstname} 
+                ${user.lastname}
+                <a href='index.html?id=${user.id}'>
+                <button>Edit</button>
+                <button class = 'delete' data-id='${user.id}'>Delete</button>
+            </div>
         </div>`;
     }
     htmlData += '</div>';

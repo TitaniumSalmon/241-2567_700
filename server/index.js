@@ -137,17 +137,18 @@ app.post('/users', async (req, res) => {
     try {
         let user = req.body;
         const results = await conn.query('INSERT INTO users SET ?', user);
+        
+        res.json({
+            message: 'Create user successfully',
+            data: results[0]
+        });
+    } catch (error) {
         if(error.length > 0){
             throw {
                 message: 'กรุณากรอกข้อมูลให้ครบถ้วน',
                 errors: errors
             };
         }
-        res.json({
-            message: 'Create user successfully',
-            data: results[0]
-        });
-    } catch (error) {
         const errorMessage = error.message || 'something went wrong';
         const errors = error.errors || [];
         console.error("error",error.Message)
